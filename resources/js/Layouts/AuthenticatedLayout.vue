@@ -7,6 +7,7 @@ import NavLink from "@/Components/NavLink.vue";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
 import { Link } from "@inertiajs/vue3";
 import PlainNavLink from "@/Components/PlainNavLink.vue";
+import PlainResponsiveNavLink from "@/Components/PlainResponsiveNavLink.vue";
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -175,6 +176,9 @@ const showingNavigationDropdown = ref(false);
                         >
                             电影列表
                         </ResponsiveNavLink>
+                        <PlainResponsiveNavLink href="/pulse"
+                            >Pulse 面板
+                        </PlainResponsiveNavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->
