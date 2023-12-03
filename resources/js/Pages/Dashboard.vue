@@ -2,6 +2,11 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
 import DownloadPage from "@/Pages/DownloadPage.vue";
+import StartQueueForTesting from "@/Pages/StartQueueForTesting.vue";
+
+defineProps<{
+    status?: string;
+}>();
 </script>
 
 <template>
@@ -24,7 +29,15 @@ import DownloadPage from "@/Pages/DownloadPage.vue";
                     <div
                         class="p-6 text-gray-900 dark:text-gray-100 space-y-4 divide-y"
                     >
+                        <div
+                            v-if="status"
+                            class="mb-4 font-medium text-sm text-green-600"
+                        >
+                            {{ status }}
+                        </div>
+
                         <DownloadPage class="pt-4" />
+                        <StartQueueForTesting class="pt-4" />
                     </div>
                 </div>
             </div>

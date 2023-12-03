@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Just4Fun;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SeoController;
@@ -24,7 +25,9 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('Dashboard', [
+        'status' => session('status'),
+    ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('users', UserController::class)
@@ -35,6 +38,9 @@ Route::resource('movies', MovieController::class)
 
 Route::get('/seo', SeoController::class)
     ->middleware(['auth', 'verified'])->name('seo');
+
+Route::post('/relax-and-have-fun', Just4Fun::class)
+    ->middleware(['auth', 'verified'])->name('relax-and-have-fun');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
