@@ -3,7 +3,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head, router } from "@inertiajs/vue3";
 import InputLabel from "@/Components/InputLabel.vue";
 import TextInput from "@/Components/TextInput.vue";
-import { reactive } from "vue";
+import { computed, reactive } from "vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 
 interface Movie {
@@ -27,9 +27,11 @@ const props = defineProps<{
     q: string;
 }>();
 
+const last_page = computed(() => props.movies.last_page.toString());
+
 const form = reactive({
-    per_page: props.movies.per_page,
-    current_page: props.movies.current_page,
+    per_page: props.movies.per_page.toString(),
+    current_page: props.movies.current_page.toString(),
     q: props.q,
 });
 
@@ -88,7 +90,7 @@ const submit = () => {
                                 <InputLabel>last_page</InputLabel>
                                 <TextInput
                                     readonly
-                                    v-model="props.movies.last_page"
+                                    v-model="last_page"
                                     class="mt-1 cursor-not-allowed"
                                     type="number"
                                     required
