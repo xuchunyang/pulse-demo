@@ -55,7 +55,7 @@ const showingNavigationDropdown = ref(false);
                                     电影列表
                                 </NavLink>
 
-                                <PlainNavLink href="/pulse"
+                                <PlainNavLink href="/pulse?period=6_hours"
                                     >Pulse 面板
                                 </PlainNavLink>
                                 <PlainNavLink
@@ -185,7 +185,7 @@ const showingNavigationDropdown = ref(false);
                         >
                             电影列表
                         </ResponsiveNavLink>
-                        <PlainResponsiveNavLink href="/pulse"
+                        <PlainResponsiveNavLink href="/pulse?period=6_hours"
                             >Pulse 面板
                         </PlainResponsiveNavLink>
                     </div>
