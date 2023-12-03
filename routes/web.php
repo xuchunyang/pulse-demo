@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SeoController;
 use App\Http\Controllers\UserController;
@@ -27,6 +28,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('users', UserController::class)
+    ->middleware(['auth', 'verified']);
+
+Route::resource('movies', MovieController::class)
     ->middleware(['auth', 'verified']);
 
 Route::get('/seo', SeoController::class)
