@@ -8,6 +8,7 @@ import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
 import { Link } from "@inertiajs/vue3";
 import PlainNavLink from "@/Components/PlainNavLink.vue";
 import PlainResponsiveNavLink from "@/Components/PlainResponsiveNavLink.vue";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/vue/24/outline";
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -56,6 +57,14 @@ const showingNavigationDropdown = ref(false);
 
                                 <PlainNavLink href="/pulse"
                                     >Pulse 面板
+                                </PlainNavLink>
+                                <PlainNavLink
+                                    href="https://github.com/xuchunyang/pulse-demo"
+                                    target="_blank"
+                                    >GitHub 仓库
+                                    <ArrowTopRightOnSquareIcon
+                                        class="h-4 w-4 ml-0.5"
+                                    />
                                 </PlainNavLink>
                             </div>
                         </div>
