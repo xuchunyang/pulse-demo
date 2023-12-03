@@ -27,7 +27,7 @@ defineProps<{
                     class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg"
                 >
                     <div
-                        class="p-6 text-gray-900 dark:text-gray-100 space-y-4 divide-y"
+                        class="p-6 text-gray-900 dark:text-gray-100 space-y-4 divide-y dark:divide-gray-700"
                     >
                         <div
                             v-if="status"
