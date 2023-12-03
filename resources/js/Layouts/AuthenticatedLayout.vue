@@ -6,6 +6,7 @@ import DropdownLink from "@/Components/DropdownLink.vue";
 import NavLink from "@/Components/NavLink.vue";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
 import { Link } from "@inertiajs/vue3";
+import PlainNavLink from "@/Components/PlainNavLink.vue";
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -51,6 +52,10 @@ const showingNavigationDropdown = ref(false);
                                 >
                                     电影列表
                                 </NavLink>
+
+                                <PlainNavLink href="/pulse"
+                                    >Pulse 面板
+                                </PlainNavLink>
                             </div>
                         </div>
 
@@ -86,8 +91,8 @@ const showingNavigationDropdown = ref(false);
                                         <DropdownLink
                                             :href="route('profile.edit')"
                                         >
-                                            Profile</DropdownLink
-                                        >
+                                            Profile
+                                        </DropdownLink>
                                         <DropdownLink
                                             :href="route('logout')"
                                             method="post"
@@ -189,8 +194,8 @@ const showingNavigationDropdown = ref(false);
 
                         <div class="mt-3 space-y-1">
                             <ResponsiveNavLink :href="route('profile.edit')">
-                                Profile</ResponsiveNavLink
-                            >
+                                Profile
+                            </ResponsiveNavLink>
                             <ResponsiveNavLink
                                 :href="route('logout')"
                                 method="post"

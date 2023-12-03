@@ -1,4 +1,6 @@
 <x-pulse>
+    <a href="/" style="font-size: 0.875rem; opacity: 0.7; line-height: 1">返回网站</a>
+
     <livewire:pulse.servers cols="full" />
 
     <livewire:pulse.usage cols="4" rows="2" />
