@@ -9,6 +9,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -20,10 +21,13 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): Response
     {
+        $users = Cache::remember('users', 60, function () {
+            return User::inRandomOrder()->get();
+        });
         return Inertia::render('Auth/Login', [
             'canResetPassword' => Route::has('password.request'),
             'status' => session('status'),
-            'users' => User::all(),
+            'users' => $users,
         ]);
     }
 
