@@ -6,7 +6,6 @@ import {reactive} from "vue";
 import Modal from "@/Components/Modal.vue";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
 import DangerButton from "@/Components/DangerButton.vue";
-import PrimaryButton from "@/Components/PrimaryButton.vue";
 
 const props = defineProps<{
   users: User[];
