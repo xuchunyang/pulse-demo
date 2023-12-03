@@ -44,7 +44,10 @@ const submit = async () => {
 <template>
     <div>
         <form @submit.prevent="submit">
-            <h1 class="text-xl font-medium mb-4">抓取网站 SEO</h1>
+            <h1 class="text-xl font-medium">抓取网站 SEO</h1>
+            <p class="text-sm my-2 opacity-75">
+                用来测试 Pulse 的「Slow Outgoing Requests」
+            </p>
             <div>
                 <InputLabel for="url" value="网址" />
                 <TextInput
