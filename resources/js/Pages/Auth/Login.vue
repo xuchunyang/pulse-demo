@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import Checkbox from '@/Components/Checkbox.vue';
-import GuestLayout from '@/Layouts/GuestLayout.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-import { Head, Link, useForm } from '@inertiajs/vue3';
-import {User} from "@/types";
+import Checkbox from "@/Components/Checkbox.vue";
+import GuestLayout from "@/Layouts/GuestLayout.vue";
+import InputError from "@/Components/InputError.vue";
+import InputLabel from "@/Components/InputLabel.vue";
+import PrimaryButton from "@/Components/PrimaryButton.vue";
+import TextInput from "@/Components/TextInput.vue";
+import { Head, Link, useForm } from "@inertiajs/vue3";
+import { User } from "@/types";
 import Impersonate from "@/Pages/Auth/Impersonate.vue";
 
 defineProps<{
@@ -16,15 +16,15 @@ defineProps<{
 }>();
 
 const form = useForm({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
     remember: false,
 });
 
 const submit = () => {
-    form.post(route('login'), {
+    form.post(route("login"), {
         onFinish: () => {
-            form.reset('password');
+            form.reset("password");
         },
     });
 };
@@ -38,10 +38,14 @@ const submit = () => {
             {{ status }}
         </div>
 
-        <Impersonate :users="users"/>
+        <Impersonate :users="users" />
 
         <details>
-            <summary class="text-sm">常规登录</summary>
+            <summary
+                class="text-sm text-gray-700 dark:text-gray-300 font-medium"
+            >
+                常规登录
+            </summary>
             <form @submit.prevent="submit">
                 <div>
                     <InputLabel for="email" value="Email" />
@@ -76,8 +80,14 @@ const submit = () => {
 
                 <div class="block mt-4">
                     <label class="flex items-center">
-                        <Checkbox name="remember" v-model:checked="form.remember" />
-                        <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">Remember me</span>
+                        <Checkbox
+                            name="remember"
+                            v-model:checked="form.remember"
+                        />
+                        <span
+                            class="ms-2 text-sm text-gray-600 dark:text-gray-400"
+                            >Remember me</span
+                        >
                     </label>
                 </div>
 
@@ -90,7 +100,11 @@ const submit = () => {
                         Forgot your password?
                     </Link>
 
-                    <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    <PrimaryButton
+                        class="ms-4"
+                        :class="{ 'opacity-25': form.processing }"
+                        :disabled="form.processing"
+                    >
                         Log in
                     </PrimaryButton>
                 </div>

@@ -102,10 +102,16 @@ const submit = async () => {
             </thead>
             <tbody>
                 <tr>
-                    <td class="border px-4 py-2">{{ seo.title }}</td>
-                    <td class="border px-4 py-2">{{ seo.description }}</td>
-                    <td class="border px-4 py-2">{{ seo.keywords }}</td>
-                    <td class="border px-4 py-2">
+                    <td class="border dark:border-gray-700 px-4 py-2">
+                        {{ seo.title }}
+                    </td>
+                    <td class="border dark:border-gray-700 px-4 py-2">
+                        {{ seo.description }}
+                    </td>
+                    <td class="border dark:border-gray-700 px-4 py-2">
+                        {{ seo.keywords }}
+                    </td>
+                    <td class="border dark:border-gray-700 px-4 py-2">
                         <img v-if="seo.icon" :src="seo.icon" alt="icon" />
                         <span v-else>没有找到图标</span>
                     </td>
