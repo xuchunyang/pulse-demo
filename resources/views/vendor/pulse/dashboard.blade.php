@@ -1,5 +1,5 @@
 <x-pulse>
-    <a href="/" class="leading-none text-sm dark:text-gray-400">返回网站</a>
+    <x-goto-to-home/>
 
     <livewire:pulse.servers cols="full" />
 
