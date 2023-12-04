@@ -1,7 +1,9 @@
 <x-pulse>
     <x-goto-to-home/>
 
-    <livewire:pulse.servers cols="full" />
+    @production
+        <livewire:pulse.servers cols="full" />
+    @endproduction
 
     <livewire:pulse.usage cols="4" rows="2" />
 
