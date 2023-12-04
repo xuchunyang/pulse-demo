@@ -1,6 +1,8 @@
 <x-pulse>
     <x-goto-to-home/>
 
+    <livewire:about cols="full" :expand="false"/>
+
     @production
         <livewire:pulse.servers cols="full" />
     @endproduction
